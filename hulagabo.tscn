@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dm2trjqhbd0uh"]
+
+[ext_resource type="Script" uid="uid://cfext25ur81b1" path="res://hulagabo.gd" id="1_hn2ad"]
+[ext_resource type="Texture2D" uid="uid://bq3aengtyhbx2" path="res://hulagabo.png" id="2_0rpl4"]
+[ext_resource type="Texture2D" uid="uid://25ww8f6a5vke" path="res://final cloud.png" id="3_0rpl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyhqs"]
+size = Vector2(121, 212)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6jsd"]
+size = Vector2(65, 28)
+
+[node name="hulagabo" type="StaticBody2D" unique_id=207426144]
+script = ExtResource("1_hn2ad")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2021720207 groups=["hulagabo", "player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=965500346 groups=["hulagabo", "player"]]
+position = Vector2(-5.5, 3)
+shape = SubResource("RectangleShape2D_yyhqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=944056499]
+position = Vector2(214, 1063)
+shape = SubResource("RectangleShape2D_n6jsd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=624318343]
+position = Vector2(26.62499, -4.7499943)
+scale = Vector2(0.740025, 0.5763666)
+texture = ExtResource("2_0rpl4")
+
+[node name="DialogueCloud" type="Node2D" parent="." unique_id=1510471087]
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueCloud" unique_id=1638734272]
+position = Vector2(132.67465, -119.828125)
+scale = Vector2(0.8957699, 0.86231154)
+texture = ExtResource("3_0rpl4")
+
+[node name="Label" type="Label" parent="DialogueCloud" unique_id=986981994]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 83.0
+offset_top = -156.0
+offset_right = 202.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

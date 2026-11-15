@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bquvj2jp1xfis"]
+
+[ext_resource type="PackedScene" uid="uid://dnv5hr03hq7i2" path="res://c_1.tscn" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://bkbry71o3578g" path="res://sky.jpg" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://j0873jr026vs" path="res://cloud1.png" id="2_7mycd"]
+[ext_resource type="Texture2D" uid="uid://8phsfcdftbol" path="res://cloud2.png" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://mi3ou7bgk4p4" path="res://MAPR.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://c2jbv8nnj64n2" path="res://castle.png" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://owonmdgl0l5j" path="res://void.gd" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dm2trjqhbd0uh" path="res://hulagabo.tscn" id="7_272bh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6jsd"]
+size = Vector2(582, 313.75)
+
+[node name="main" type="Node2D" unique_id=678807460]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=81922440]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=459244518]
+position = Vector2(2314, -249)
+scale = Vector2(1.8932952, 2.1486568)
+texture = ExtResource("1_lquwl")
+
+[node name="clouds" type="Parallax2D" parent="." unique_id=2084484856]
+
+[node name="Sprite2D" type="Sprite2D" parent="clouds" unique_id=1803327056]
+position = Vector2(428, 83)
+scale = Vector2(1.3126073, 0.99065423)
+texture = ExtResource("2_7mycd")
+
+[node name="cloud2" type="Parallax2D" parent="." unique_id=733626288]
+
+[node name="Sprite2D" type="Sprite2D" parent="cloud2" unique_id=1533946279]
+position = Vector2(1614, -2)
+scale = Vector2(1.1862055, 1.269149)
+texture = ExtResource("3_272bh")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1052587835]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1162153750]
+position = Vector2(1663, 33.999985)
+scale = Vector2(5.604636, 5.1064816)
+texture = ExtResource("4_7mycd")
+
+[node name="c1" parent="." unique_id=117490711 instance=ExtResource("1_0xm2m")]
+position = Vector2(215, 493.99997)
+
+[node name="StaticBody2D" parent="." unique_id=1606505591 instance=ExtResource("3_h2yge")]
+position = Vector2(-25.000015, 495)
+scale = Vector2(0.2, 0.2)
+
+[node name="void" type="Area2D" parent="." unique_id=994451229 groups=["DEAD"]]
+script = ExtResource("7_5vw27")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void" unique_id=1268442982 groups=["DEAD"]]
+position = Vector2(2988, 453.875)
+shape = SubResource("RectangleShape2D_n6jsd")
+
+[node name="hulagabo" parent="." unique_id=207426144 instance=ExtResource("7_272bh")]
+position = Vector2(2512, -132)
+
+[connection signal="area_entered" from="void" to="void" method="_on_area_entered"]

@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://c4fjyasr1ucpo"]
+
+[ext_resource type="Script" uid="uid://c4fem7u885sjd" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Texture2D" uid="uid://bkbry71o3578g" path="res://sky.jpg" id="2_4hy44"]
+[ext_resource type="Texture2D" uid="uid://bi7nhxywquox3" path="res://start button.png" id="2_mae5d"]
+[ext_resource type="Texture2D" uid="uid://boljlofdmvy7e" path="res://exit button.png" id="3_4hy44"]
+[ext_resource type="Texture2D" uid="uid://j0873jr026vs" path="res://cloud1.png" id="5_l48gv"]
+[ext_resource type="Texture2D" uid="uid://8phsfcdftbol" path="res://cloud2.png" id="6_ecwwl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n6jsd"]
+bg_color = Color(0.19215687, 0.16470589, 0.6745098, 1)
+corner_radius_top_left = 37
+corner_radius_top_right = 37
+corner_radius_bottom_right = 37
+corner_radius_bottom_left = 37
+shadow_offset = Vector2(1.545, 2.305)
+
+[node name="Menu" type="Control" unique_id=957265450]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 8.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lti8b")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1411849335]
+position = Vector2(491, 292)
+texture = ExtResource("2_4hy44")
+
+[node name="START" type="Button" parent="." unique_id=1656580153]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -204.0
+offset_top = -131.0
+offset_right = 168.0
+offset_bottom = -31.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6jsd")
+text = "START GAME"
+
+[node name="TextureRect" type="TextureRect" parent="START" unique_id=454790914]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.28225806
+anchor_top = -2.1453633
+anchor_right = 0.8252688
+anchor_bottom = -0.3700626
+offset_right = 195.0
+offset_bottom = 274.91376
+texture = ExtResource("2_mae5d")
+metadata/_edit_use_anchors_ = true
+
+[node name="EXI" type="Button" parent="." unique_id=597640265]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34
+anchor_top = 0.71800005
+anchor_right = 0.646
+anchor_bottom = 0.785
+offset_left = 0.32000732
+offset_top = 51.86798
+offset_right = -0.1920166
+offset_bottom = 66.451996
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 42
+theme_override_styles/normal = SubResource("StyleBoxFlat_n6jsd")
+text = "EXIT"
+
+[node name="Sprite2D" type="Sprite2D" parent="EXI" unique_id=1671408324]
+position = Vector2(180.00003, -6.132019)
+scale = Vector2(0.7982759, 0.7089953)
+texture = ExtResource("3_4hy44")
+
+[node name="Cloud1" type="Sprite2D" parent="." unique_id=1385959362]
+position = Vector2(935, 112)
+scale = Vector2(0.5497427, 0.7266355)
+texture = ExtResource("5_l48gv")
+
+[node name="Cloud2" type="Sprite2D" parent="." unique_id=1774938875]
+position = Vector2(202.00002, 379)
+scale = Vector2(0.79378533, 0.8531915)
+texture = ExtResource("6_ecwwl")
+
+[connection signal="pressed" from="START" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="EXI" to="." method="_on_exi_pressed"]

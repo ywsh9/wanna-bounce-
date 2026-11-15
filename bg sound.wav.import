@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b48lvy5kfu5qx"
+path="res://.godot/imported/bg sound.wav-de875dda3d8c5b107fa1f2821b51f0c2.sample"
+
+[deps]
+
+source_file="res://bg sound.wav"
+dest_files=["res://.godot/imported/bg sound.wav-de875dda3d8c5b107fa1f2821b51f0c2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

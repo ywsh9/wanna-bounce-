@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b8vb43ekrrl8x"]
+
+[ext_resource type="Script" uid="uid://cdixqxwd5sp26" path="res://spike.gd" id="1_7k7bx"]
+[ext_resource type="Texture2D" uid="uid://dt216m0bm3t1r" path="res://spike.png" id="2_tggh8"]
+[ext_resource type="AudioStream" uid="uid://ppjghfh62x1s" path="res://Hit4.wav" id="3_tggh8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6jsd"]
+size = Vector2(166, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyhqs"]
+size = Vector2(132, 64)
+
+[node name="spike" type="StaticBody2D" unique_id=2051423447 groups=["spike"]]
+script = ExtResource("1_7k7bx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1710078278 groups=["spike"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1293124913]
+position = Vector2(6, 14.5)
+shape = SubResource("RectangleShape2D_n6jsd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1143825862]
+position = Vector2(6, 22)
+shape = SubResource("RectangleShape2D_yyhqs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=273669609]
+position = Vector2(-1, 5)
+scale = Vector2(0.37229103, 0.4468912)
+texture = ExtResource("2_tggh8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=981425941]
+stream = ExtResource("3_tggh8")
+volume_db = 24.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_spike_area_entered"]

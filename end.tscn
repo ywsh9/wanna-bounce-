@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bm2nl7f7t5sod"]
+
+[ext_resource type="Script" uid="uid://dp2qshvtwerie" path="res://end.gd" id="1_lt2ag"]
+[ext_resource type="Texture2D" uid="uid://ct17bwrgro1ti" path="res://bbg.jpg" id="1_n735c"]
+[ext_resource type="AudioStream" uid="uid://ppjghfh62x1s" path="res://Hit4.wav" id="3_75yvt"]
+
+[node name="Node2D" type="Node2D" unique_id=743263369]
+script = ExtResource("1_lt2ag")
+
+[node name="Bbg" type="Sprite2D" parent="." unique_id=1461613976]
+position = Vector2(587, 334.50003)
+scale = Vector2(8.459459, 4.8851347)
+texture = ExtResource("1_n735c")
+
+[node name="Label" type="Label" parent="." unique_id=1830416776]
+offset_right = 1150.0
+offset_bottom = 613.0
+theme_override_font_sizes/font_size = 86
+text = "wanna bounce back ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1986945992]
+stream = ExtResource("3_75yvt")
+volume_db = 24.0
