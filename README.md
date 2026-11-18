@@ -1,5 +1,5 @@
 # wanna-bounce
-a game developed by me and @mitul-lll
+a game developed by me and (@mitul-lll)
 this game was developed in godot 
 
 #CONTROLS
